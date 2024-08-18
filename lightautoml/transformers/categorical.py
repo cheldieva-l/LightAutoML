@@ -162,7 +162,14 @@ class LabelEncoder(LAMLTransformer):
             )
             vals = cnts[cnts[i] > co].index.values
             self.dicts[i] = Series(np.arange(vals.shape[0], dtype=np.int32) + 1, index=vals)
-
+            
+            print('i=',i)
+            print('co=',co)
+            print('cnts=',cnts)
+            print('self.dicts[i]=',self.dicts[i])
+            print('subs=',subs)            
+            print('vals=',vals)  
+            print('cnts[i]=',cnts[i])             
         return self
 
     def transform(self, dataset: NumpyOrPandas) -> NumpyDataset:
