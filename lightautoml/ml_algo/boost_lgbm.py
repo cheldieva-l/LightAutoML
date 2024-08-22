@@ -299,6 +299,10 @@ class BoostLGBM(TabularMLAlgo, ImportanceEstimator):
             Predicted target values.
 
         """
+        print(dataset.data)
+        dataset_df=pand.DataFrame(dataset.data)
+        dataset_df.to_csv('/kaggle/working/dataset_predict_single_fold.csv' )
+        
         pred = self.task.losses["lgb"].bw_func(model.predict(dataset.data))
 
         return pred
