@@ -253,7 +253,7 @@ class BoostLGBM(TabularMLAlgo, ImportanceEstimator):
         train_df=pand.DataFrame(train.data)
         train_df.to_csv('/kaggle/working/train_fit_predict_single_fold.csv' )
         valid_df=pand.DataFrame(valid.data)
-        train_df.to_csv('/kaggle/working/valid_fit_predict_single_fold.csv' )
+        valid_df.to_csv('/kaggle/working/valid_fit_predict_single_fold.csv' )
         lgb_train = lgb.Dataset(train.data, label=train_target, weight=train_weight)
         lgb_valid = lgb.Dataset(valid.data, label=valid_target, weight=valid_weight)
 
